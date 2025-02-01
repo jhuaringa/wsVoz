@@ -46,6 +46,7 @@ io.on('connection', (socket) => {
 });
 
 // Iniciar el servidor en el puerto 8080
-server.listen(8080, '0.0.0.0', () => {
-  console.log('Servidor Socket.io en http://0.0.0.0:8080');
+const PORT = process.env.PORT || 8080;  // Usa el puerto proporcionado por Render, si no existe, usa 8080
+server.listen(PORT, () => {
+  console.log(`Servidor Socket.io en http://localhost:${PORT}`);
 });
